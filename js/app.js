@@ -7,6 +7,10 @@
 const navbar = document.getElementById('navbar__list');
 const sections = document.getElementsByTagName('section');
 const fragment = document.createDocumentFragment();
+const links = document.getElementsByTagName('a');
+
+console.log(links);
+
 
 
 // build the nav
@@ -31,16 +35,23 @@ navbar.appendChild(fragment);
 // Add class 'active' to section when near top of viewport
 
 
-const a = document.getElementsByTagName('a');
-console.log(a);
-
 window.addEventListener("scroll" , () => {
 
     for(let section of sections){
         const reaction = section.getBoundingClientRect();
         if(reaction.top > 0 && reaction.top < 300){
+
+            for(let link of links){
+                if( section.dataset.nav === link.innerHTML ){
+                    link.style.cssText = "background: #333;color: #fff;transition: ease 0.3s all";
+                    section.style.opacity = 1;
+                }
+                else{
+                    link.style.cssText = "color: #000;background: #fff;";
+                }
+            }
             //section.classList.add('your-active-class');
-            section.style.opacity = 1;
+            //section.style.opacity = 1;
             
         }
         else {
