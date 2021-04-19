@@ -1,8 +1,7 @@
 
-/**
- * Define Global Variables
- * 
-*/
+
+// Define Global Variables
+
 
 const navbar = document.getElementById('navbar__list');
 const sections = document.getElementsByTagName('section');
@@ -19,8 +18,7 @@ console.log(links);
 for(let section of sections){
     let alink = document.createElement('a');
     alink.innerHTML = section.dataset.nav;
-    let li = document.createElement('li').innerHTML = alink; 
-    //li.classList.add('nav_li');  
+    let li = document.createElement('li').innerHTML = alink;  
     li.classList.add('menu__link');
     fragment.appendChild(li);
     alink.addEventListener("click", () => {
@@ -31,8 +29,6 @@ for(let section of sections){
 //append the fragment into the UL
 
 navbar.appendChild(fragment);
-
-// Add class 'active' to section when near top of viewport
 
 
 window.addEventListener("scroll" , () => {
@@ -62,11 +58,5 @@ window.addEventListener("scroll" , () => {
 
 })
 
-
-
-
-
-
-// Set sections as active
 
 
