@@ -2,17 +2,14 @@
 
 // Define Global Variables
 
-
 const navbar = document.getElementById('navbar__list');
 const sections = document.getElementsByTagName('section');
 const fragment = document.createDocumentFragment();
 const links = document.getElementsByTagName('a');
 
-console.log(links);
 
 
-
-// build the nav
+// build the nav and linking the anchor links into the sections
 
 
 for(let section of sections){
@@ -26,10 +23,12 @@ for(let section of sections){
     });
 }
 
-//append the fragment into the UL
+//append the fragment into the ul element 
 
 navbar.appendChild(fragment);
 
+
+//listening for scroll event and get the dimensions of the section 
 
 window.addEventListener("scroll" , () => {
 
@@ -39,19 +38,26 @@ window.addEventListener("scroll" , () => {
 
             for(let link of links){
                 if( section.dataset.nav === link.innerHTML ){
+
+                    //adding style for the links and the sections to be clear which section is being viewed while scrolling through the page.
+
                     link.style.cssText = "background: #333;color: #fff;transition: ease 0.3s all";
                     section.style.opacity = 1;
+                    section.style.backgroundColor = "black";
+
                 }
                 else{
+
+                    //returning the default style of the links 
                     link.style.cssText = "color: #000;background: #fff;";
+                    
                 }
             }
-            //section.classList.add('your-active-class');
-            //section.style.opacity = 1;
             
         }
         else {
-            //section.classList.remove('your-active-class');
+
+            //adding oppacity styling to the section 
             section.style.opacity = 0.1;
         }
     }
