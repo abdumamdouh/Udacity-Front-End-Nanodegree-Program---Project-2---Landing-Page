@@ -12,5 +12,5 @@ Second Project in the Nanodergree
 
 
 
-To get started, open `index.html` or click [Here](https://abdumamdouh.github.io/Udacity-Front-End-Nanodegree-Program---Project-1---Landing-Page/).
+To get started, open `index.html` or click [Here](https://abdumamdouh.github.io/Udacity-Front-End-Nanodegree-Program---Project-2---Landing-Page/).
 
